@@ -1,4 +1,4 @@
-# Basic Django
+# :bangladesh: Basic Django :bangladesh:
 
 #### Create and Activate virtual environment
 
@@ -14,8 +14,6 @@ pip freeze > requirements.txt
 or
 echo "django>=3.2,<3.3" > requirements.txt
 ```
-
-
 
 #### Install package or requirements.txt file
 
@@ -38,5 +36,3 @@ python manage.py startapp <app_name>
 ```
 python manage.py runserver
 ```
-
-
