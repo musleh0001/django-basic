@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block style %}
+    <style>
+        button {
+            border: none;
+            padding: .5rem 1rem;
+            border-radius: 100vmax;
+            background-color: coral;
+            color: white;
+            transition: all .3s ease-in-out;
+        }
+        button:hover {
+            cursor: pointer;
+            color: coral;
+            background-color: white;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+{% endblock style %}
+
+
+{% block content %}
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.content }}</p>
+
+    <button><a href={% url 'home' %}>Go Back</a></button>
+{% endblock content %}

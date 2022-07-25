@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from articles.models import Article
 
 
 def home_view(request):
-    return HttpResponse("<h1>Hello World</h1>")
+    context = {"articles": Article.objects.all()}
+    return render(request, "home.html", context)

@@ -36,3 +36,65 @@ python manage.py startapp <app_name>
 ```
 python manage.py runserver
 ```
+
+#### Run migration
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+#### Django shell
+
+```
+python manage.py shell
+```
+
+
+
+---
+
+#### Python dataclasses
+
+```python
+from dataclasses importdataclass
+
+@dataclass
+class BlogPost:
+    title: str
+    content: str
+
+obj = BlogPost(title="Hello World", content="This is awesome")
+
+```
+
+#### Django Model Class
+
+```python
+from django.db import models
+
+class Article(models.Model):
+    title = models.CharField()
+    content = models.TextField()
+
+obj = Article(title="Hello World", content="This is awesome")
+obj.save()
+
+or
+
+Article.objects.create(title="Hello World", content="This is awesome")
+```
+
+#### Get single data from database
+
+```python
+Article.objects.get(id=1)
+```
+
+#### Get random data from database
+
+```python
+Article.objects.all().order_by("?").first()
+```
+
+
