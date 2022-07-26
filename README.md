@@ -93,3 +93,15 @@ Article.objects.get(id=1)
 ```python
 Article.objects.all().order_by("?").first()
 ```
+
+#### Register model in the admin
+
+```python
+admin.site.register(Model_Name)
+
+or
+
+@admin.site(Model_Name)
+class ModelNameAdmin(admin.ModelAdmin):
+    pass
+```
