@@ -19,6 +19,7 @@
         
         ul[role="list"] {
             list-style: none;
+            padding-left: 0;
         }
 
         nav ul {
@@ -32,13 +33,50 @@
             color: coral;
         }
 
+        .form {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .form form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .form input {
+            width: 50%;
+            height: 2rem;
+            border-radius: 100vmax;
+            border: 0;
+            padding: .5rem 3rem;
+            outline: none;
+            box-shadow: inset .25rem .25rem .5rem .115rem lightgray;
+            font-size: 1.2rem;
+        }
+
+        .form button {
+            cursor: pointer;
+            border: 0;
+            padding: 1rem 2rem;
+            border-radius: 100vmax;
+            background-color: white;
+            box-shadow: .25rem .25rem .25rem .115rem lightgray;
+        }
+
+        .form button:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 lightgray;
+        }
+
         .container {
             padding: 2rem;
             max-width: 70vw;
             margin: 3rem auto;
             background-color: linen;
             border-radius: 1rem;
-            box-shadow: 0 .25rem .5rem .15rem rgb(190, 190, 190);
+            box-shadow: .25rem .25rem .5rem .15rem lightgray;
         }
     </style>
     
@@ -49,18 +87,26 @@
 <body>
     <nav>
         <div>
-            <h3>Musleh</h3>
+            <h3><a href={% url 'home' %}>Musleh</a></h3>
         </div>
         <div>
             <ul role="list">
-                <li>Home</li>
-                <li>About</li>
+                <li><a href={% url 'home' %}>Home</a></li>
+                <li><a href={% url 'article-create' %}>Create</a></li>
                 <li>Contact</li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
+        <div class="form">
+            <form action="/articles/">
+                <input type="text" name="q">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+
         {% block content %}
         {% endblock content %}
     </div>

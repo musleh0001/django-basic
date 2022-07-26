@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+
+{% block style %}
+    <style>
+        .form__create {
+            width: 100%;
+            margin-top: 4rem;
+        }
+
+        .form__create form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .form__create input, .form__create textarea {
+            width: 50%;
+            height: 2rem;
+            border-radius: 1rem;
+            border: 0;
+            padding: .5rem 3rem;
+            outline: none;
+            box-shadow: inset .25rem .25rem .5rem .115rem lightgray;
+            font-size: 1.2rem;
+        }
+
+        .form__create textarea {
+            padding-top: 1rem;
+            resize: none;
+            height: 6rem;
+        }
+
+        .form__create button {
+            width: 50%;
+            cursor: pointer;
+            border: 0;
+            padding: 1rem 2rem;
+            border-radius: 100vmax;
+            background-color: white;
+            box-shadow: .25rem .25rem .25rem .115rem lightgray;
+        }
+
+        .form__create button:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 lightgray;
+        }
+    </style>
+{% endblock style %}
+
+
+{% block content %}
+    <div class="form__create">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="title" placeholder="Title" />
+            <textarea name="content" placeholder="Content"></textarea>
+            <button type="submit">Create article</button>
+        </form>
+    </div>
+{% endblock content %}

@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     # 3rd party packages
     # internal app
     "articles.apps.ArticlesConfig",
+    "accounts.apps.AccountsConfig",
 ]
 
 MIDDLEWARE = [

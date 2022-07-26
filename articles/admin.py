@@ -5,4 +5,5 @@ from .models import Article
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("id", "title")
+    search_fields = ("title", "content")
