@@ -87,7 +87,7 @@
 <body>
     <nav>
         <div>
-            <h3><a href={% url 'home' %}>Musleh</a></h3>
+            <h3><a href={% url 'home' %}>Khan</a></h3>
         </div>
         <div>
             <ul role="list">
@@ -95,6 +95,14 @@
                 <li><a href={% url 'article-create' %}>Create</a></li>
                 <li>Contact</li>
             </ul>
+        </div>
+        <div>
+            {% if user.is_authenticated %}
+                <h1>{{ user.username }}</h1>
+                <a href={% url 'logout' %}>Logout</a>
+            {% else %}
+                <a href={% url 'login' %}>Login</a>
+            {% endif %}
         </div>
     </nav>
 
